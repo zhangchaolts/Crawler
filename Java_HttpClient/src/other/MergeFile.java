@@ -26,7 +26,7 @@ public class MergeFile {
 		String line = "";
 		while ((line = br1.readLine()) != null) {
 //			ptr++;
-//			if (ptr > 10000) {
+//			if (ptr > 10000) { //test
 //				break;
 //			}
 			numberList.add(line.split("#\\&#")[2]);
