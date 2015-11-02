@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "minxindai.py", line 124, in ?
+    sign(username_array[i], password_array[i])
+  File "minxindai.py", line 43, in sign
+    login_response = opener.open(login_request).read().decode('utf8').encode('gb18030')
+  File "/usr/lib64/python2.4/urllib2.py", line 364, in open
+    response = meth(req, response)
+  File "/usr/lib64/python2.4/urllib2.py", line 471, in http_response
+    response = self.parent.error(
+  File "/usr/lib64/python2.4/urllib2.py", line 402, in error
+    return self._call_chain(*args)
+  File "/usr/lib64/python2.4/urllib2.py", line 337, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.4/urllib2.py", line 480, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+urllib2.HTTPError: HTTP Error 504: Gateway Time-out
+Traceback (most recent call last):
+  File "minxindai.py", line 124, in <module>
+    sign(username_array[i], password_array[i])
+  File "minxindai.py", line 43, in sign
+    login_response = opener.open(login_request).read().decode('utf8').encode('gb18030')
+  File "/usr/local/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/local/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/local/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/local/lib/python2.7/urllib2.py", line 1187, in do_open
+    r = h.getresponse(buffering=True)
+  File "/usr/local/lib/python2.7/httplib.py", line 1067, in getresponse
+    response.begin()
+  File "/usr/local/lib/python2.7/httplib.py", line 409, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python2.7/httplib.py", line 365, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/usr/local/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "minxindai.py", line 124, in ?
+    sign(username_array[i], password_array[i])
+  File "minxindai.py", line 43, in sign
+    login_response = opener.open(login_request).read().decode('utf8').encode('gb18030')
+  File "/usr/lib64/python2.4/urllib2.py", line 364, in open
+    response = meth(req, response)
+  File "/usr/lib64/python2.4/urllib2.py", line 471, in http_response
+    response = self.parent.error(
+  File "/usr/lib64/python2.4/urllib2.py", line 402, in error
+    return self._call_chain(*args)
+  File "/usr/lib64/python2.4/urllib2.py", line 337, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.4/urllib2.py", line 480, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+urllib2.HTTPError: HTTP Error 504: Gateway Time-out
