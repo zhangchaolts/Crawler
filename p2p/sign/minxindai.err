@@ -54,3 +54,7 @@ Traceback (most recent call last):
   File "/usr/lib64/python2.4/urllib2.py", line 480, in http_error_default
     raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
 urllib2.HTTPError: HTTP Error 504: Gateway Time-out
+Traceback (most recent call last):
+  File "minxindai.py", line 10, in ?
+    FW = open("log/minxindai_" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") +  ".txt", "w")
+IOError: [Errno 2] No such file or directory: 'log/minxindai_2015-11-02_23:00:17.txt'

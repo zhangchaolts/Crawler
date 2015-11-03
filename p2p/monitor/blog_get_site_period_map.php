@@ -1,6 +1,7 @@
 <?php
 
 $FlAG_DEBUG = false;
+#FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
 	$site_period_map = get_site_period_map("http://runningyangmao.blog.163.com/blog/static/25166910920157634424666");

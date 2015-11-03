@@ -1,6 +1,7 @@
 <?php
 
 $FlAG_DEBUG = false;
+#$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
     echo can_invest_huirendai()."\n";
@@ -14,12 +15,14 @@ function can_invest_huirendai() { //新站点这里要注意修改
 	$buf = mb_convert_encoding($buf, "gbk", "utf-8");
 	//echo $buf;
 
+	$is_find = false;
+
 	while( ($buf = strstr($buf, '<div class="invest-item">')) != false ) { //项目开头标记
 
 		$item_buf = substr($buf, 0, strpos($buf, 'data-modal-url="/invest/detail')); //项目结尾标记
 		//echo $item_buf."\n";
 		
-		if(strstr($item_buf, '新用户限投一次') != false) {
+		if(strstr($item_buf, '新用户限投一次') != false || strstr($item_buf, '满标复审') != false) {
 			$buf = strstr($buf, 'data-modal-url="/invest/detail'); //项目结尾标记
 			continue;
 		}
@@ -60,10 +63,15 @@ function can_invest_huirendai() { //新站点这里要注意修改
 		}
 
 		if( ( ($qixian1 != 0 && $qixian1 == 1) || ($qixian2 != 0 && 15 <= $qixian2 && $qixian2 <= 35) ) && $rate != 0 && $rate < 12.0) {
-			return true;
+			//return true;
+			$is_find = true;
 		}
 
 		$buf = strstr($buf, 'data-modal-url="/invest/detail'); //项目结尾标记
+	}
+
+	if($is_find == true) {
+		return true;
 	}
 
 	return false;

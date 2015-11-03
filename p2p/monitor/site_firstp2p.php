@@ -1,6 +1,7 @@
 <?php
 
 $FlAG_DEBUG = false;
+//$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
 	echo can_invest_firstp2p()."\n";
@@ -17,6 +18,8 @@ function can_invest_firstp2p() { //新站点这里要注意修改
 
 	$buf = mb_convert_encoding($buf, "gbk", "utf-8");
 	//echo $buf;
+
+	$is_find = false;
 
 	while( ($buf = strstr($buf, '<a title="')) != false ) { //项目开头标记
 
@@ -60,11 +63,16 @@ function can_invest_firstp2p() { //新站点这里要注意修改
 		echo var_dump($is_100);
 
 		if($is_100 == true && $qixian != "" && (startsWith($qixian, "7~") == true || $qixian == "10" || $qixian == "15" || $qixian == "20" || $qixian == "30") && $left_money != '0.00') {
-			return true;
+			//return true;
+			$is_find = true;
 		}
 
 		$buf = strstr($buf, '<div class="product_btn">'); //项目结尾标记
 
+	}
+
+	if($is_find == true) {
+		return true;
 	}
 
 	return false;

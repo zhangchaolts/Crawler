@@ -1,9 +1,10 @@
 <?php
 
 $FlAG_DEBUG = false;
+//$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
-	$mail_list = get_mail_list("http://runningyangmao.blog.163.com/blog/static/25166910920157634424666", "ÒËÈË´û");
+	$mail_list = get_mail_list("http://runningyangmao.blog.163.com/blog/static/25166910920157634424666", "»ÝÈË´û");
 	print_r($mail_list);
 }
 

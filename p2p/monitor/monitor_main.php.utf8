@@ -1,0 +1,72 @@
+<?php
+
+$url = "http://runningyangmao.blog.163.com/blog/static/25166910920157634424666";
+
+include('blog_get_site_sitename_map.php');
+$site_sitename_map = get_site_sitename_map($url);
+print_r($site_sitename_map);
+
+include('blog_get_site_period_map.php');
+$site_period_map = get_site_period_map($url);
+print_r($site_period_map);
+
+while(true) {
+
+	$now_time = date("Y-m-d H:i:s");
+	$parts1 = explode(":", $now_time);
+	if(count($parts1) == 3) {
+		$minute = $parts1[1];
+		echo $minute."\n";
+		if($minute <= 10) {
+			echo $minute."\n";
+			$site_sitename_map = get_site_sitename_map($url);
+			$site_period_map = get_site_period_map($url);
+		}
+	}
+
+	foreach($site_sitename_map as $site => $sitename) {
+		include("site_".$site.".php");
+		$is_can_invest = call_user_func("can_invest_".$site);
+		echo $is_can_invest."\n";
+		if($is_can_invest == true) {
+			include('blog_get_mail_list.php');
+			$mail_list = get_mail_list($url, $sitename);
+			print_r($mail_list);
+			$mail_list = array("82213802@qq.com", "43228637@qq.com");
+
+			$mail_title = $sitename."有标啦~";
+			$mail_body = "";
+			foreach($mail_list as $index1 => $mail_box) {
+				system('echo '.$mail_body.' | mail -s "'.$mail_title.'" '."$mail_box");
+			}
+		}
+	}
+
+
+
+	sleep(60);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
