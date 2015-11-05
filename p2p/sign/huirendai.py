@@ -31,10 +31,9 @@ def sign(username, password):
 
 	login_post_data = urllib.urlencode(login_data) 
 
-	login_headers = {	"Referer" : "http://huirendai.com/user/login", \
-						"Host" : "huirendai.com", \
+	login_headers = {	"Referer" : "http://www.huirendai.com/user/login", \
+						"Host" : "www.huirendai.com", \
 						"Accept" : "*/*", \
-						"HTTPS:" : "1",
 						"Origin" : "http://huirendai.com", \
 						"Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8", \
 						"User-Agent" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.69 Safari/537.36" \
@@ -46,8 +45,7 @@ def sign(username, password):
 	#print login_response
 	
 	if login_response.find('"m":"\u767b\u5f55\u6210\u529f"') == -1:
-		print "登录失败!"
-		return
+		return "登录失败！"
 
 	# Step2:签到
 	sign_url = "http://www.huirendai.com/index.php?aj&q=user/sign"
@@ -62,16 +60,40 @@ def sign(username, password):
 	sign_request = urllib2.Request(sign_url, urllib.urlencode({}), sign_headers)
 	sign_response = opener.open(sign_request).read().decode('utf8').encode('gb18030')
 	#print sign_response
-
 	#sign_response = '{"code":"00000","msg":"\u7b7e\u5230\u6210\u529f","data":{"TODAY_FLAG":"Y","SERIES_DAY":"39","NEXT_POINTS":0,"CURR_POINTS":"6","TODAY":16682}}'
+
+	result1 = ""
 
 	CURR_POINTS = ""
 	sign_anwser = re.search('"CURR_POINTS":"(.*?)",', sign_response)
 	if sign_anwser:
 		CURR_POINTS = sign_anwser.group(1)
-		print username + "今日签到获得惠米:" + CURR_POINTS
+		result1 = "今日签到获得" + CURR_POINTS + "惠米。"
 	else:
-		print username + "今日已经签到过!"
+		result1 =  "今日已经签到过！"
+
+	#return result1
+
+	# Step3：获取总惠米数量
+	home_url = "http://www.huirendai.com/index.php?user"
+	req = urllib2.Request(home_url,headers = sign_headers)
+	home_html = urllib2.urlopen(req).read().decode('utf-8').encode('gbk')
+	#print home_html
+	#home_html = '<b class="huimi"><a href="/index.php?user&q=user/points">359</a><strong></strong></b>'
+
+	result2 = ""
+
+	totalPopularity = ""
+	home_anwser = re.search('points">(.*?)</a><strong></strong></b>', home_html)
+	if home_anwser:
+		totalPopularity = home_anwser.group(1)
+		result2 = "总惠米为" + totalPopularity + "。"
+	else:
+		print "no"
+
+	result = result1 + result2
+
+	return result
 
 
 if __name__ == '__main__':
@@ -81,10 +103,11 @@ if __name__ == '__main__':
 
 	username_array = ["zhangchao822", "wangluyao1215", "zhangxm0713", "caixl0713"]
 	password_array = ["csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238"]
-	#sername_array = ["zhangchao822", "wangluyao1215", "zhangxm0713"]
-	#password_array = ["csujk4236238", "csujk4236238", "csujk4236238"]
+	#username_array = ["zhangchao822", "wangluyao1215"]
+	#password_array = ["csujk4236238", "csujk4236238"]
 
 	print "\n【" + datetime.datetime.now().strftime("%Y-%m-%d") + "】";
 
 	for i in range(len(username_array)):
-		sign(username_array[i], password_array[i])
+		result = sign(username_array[i], password_array[i])
+		print username_array[i] + ":" + result

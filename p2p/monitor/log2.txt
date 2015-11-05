@@ -1,0 +1,134 @@
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_mail_list.php on line 20
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_mail_list.php on line 20
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: Connection timed out in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_mail_list.php on line 20
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: Connection timed out in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_mail_list.php on line 20
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_period_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://www.huirendai.com/invest/index.html): failed to open stream: HTTP request failed! HTTP/1.1 504 Gateway Time-out
+ in /search/zhangchao/GitHub/Crawler/p2p/monitor/site_huirendai.php on line 14
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
+PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_period_map.php on line 18

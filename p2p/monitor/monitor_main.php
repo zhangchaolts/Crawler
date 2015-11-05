@@ -65,7 +65,7 @@ while(true) {
 		}
 
 		echo "\n";
-		sleep(5);
+		sleep(60);
 	}
 
 }

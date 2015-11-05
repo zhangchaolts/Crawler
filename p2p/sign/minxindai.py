@@ -7,8 +7,6 @@ import cookielib
 import re
 import time,datetime
 
-FW = open("log/minxindai_" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") +  ".txt", "w")
-
 def sign(username, password):
 
 	# 获取Cookiejar对象（存在本机的cookie消息）
@@ -51,8 +49,7 @@ def sign(username, password):
 	#print homepage_html
 
 	if homepage_html.find('退出') == -1:
-		print "登录失败!"
-		return
+		return "登录失败！"
 
 	# Step2:签到
 	sign_url = "http://www.minxindai.com/?c=sign"
@@ -69,15 +66,30 @@ def sign(username, password):
 	sign_response = opener.open(sign_request).read().decode('unicode_escape').encode('gb18030')
 	#print sign_response
 
+	result1 = ""
+
 	jifen = ""
 	sign_anwser = re.search('获得\<i\>(.*?)\<', sign_response)
 	if sign_anwser:
 		jifen = sign_anwser.group(1)
-		print username + "今日签到获得积分:" + jifen
-		FW.write(username + "今日签到获得积分:" + jifen + "\n")
+		result1 = "今日签到获得" + jifen + "积分。"
 	else:
-		print username + "今日已经签到过!"
-		FW.write(username + "今日已经签到过!" + "\n")
+		result1 = "今日已经签到过!"
+
+
+	result2 = ""
+	home_url = "http://www.minxindai.com/?m=event&c=jfturntab"
+	home_html = urllib2.urlopen(home_url).read()
+	#print home_html
+
+	result2 = ""
+
+	totalPopularity = ""
+	home_anwser = re.search('<span class="counts">(.*?)</span>', home_html)
+	if home_anwser:
+		totalPopularity = home_anwser.group(1)
+		result2 = "总积分为" + totalPopularity + "。"
+
 
 	# Step3:抽奖
 	lottery_url = "http://www.minxindai.com/?m=event&c=jfturntab&a=islottery"
@@ -94,7 +106,8 @@ def sign(username, password):
 	lottery_request = urllib2.Request(lottery_url, urllib.urlencode({}), lottery_headers)
 	lottery_response = opener.open(lottery_request).read().decode('unicode_escape').encode('gb18030')
 	print lottery_response
-	FW.write(lottery_response + "\n")
+
+	result3 = "未抽中实物奖品。"
 
 	ptr = 0
 	while lottery_response.find("您的积分不足") == -1 and lottery_response.find("今天的抽奖次数已用完") == -1 and ptr < 10:
@@ -102,10 +115,14 @@ def sign(username, password):
 		lottery_request = urllib2.Request(lottery_url, urllib.urlencode({}), lottery_headers)
 		lottery_response = opener.open(lottery_request).read().decode('unicode_escape').encode('gb18030')
 		print lottery_response
-		FW.write(lottery_response + "\n")
+		jp_anwser = re.search(',"name":"(.*?)"', lottery_response)
+		if jp_anwser:
+			jp = jp_anwser.group(1)
+			if jp.find("谢谢参与") != -1 and jp.find("积分") != -1 and jp.find("加息券") != -1 and jp.find("现金券") != -1:
+				result3 = "恭喜抽中" + jp + "！"
 
-	print
-	FW.write("\n")
+	result = result1 + result2 + result3
+	return result
 
 
 if __name__ == '__main__':
@@ -115,12 +132,13 @@ if __name__ == '__main__':
 
 	username_array = ["18211085003", "15646563977", "13158424485", "13158422410", "13240912500", "13240912700"]
 	password_array = ["csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238"]
-	#username_array = ["13158422410"]
-	#password_array = ["csujk4236238"]
+	#username_array = ["18211085003", "15646563977"]
+	#password_array = ["csujk4236238", "csujk4236238"]
 
 	print "\n【" + datetime.datetime.now().strftime("%Y-%m-%d") + "】";
  
 	for i in range(len(username_array)):
-		sign(username_array[i], password_array[i])
+		result = sign(username_array[i], password_array[i])
+		print username_array[i] + ":" + result
 
-	FW.close()
+
