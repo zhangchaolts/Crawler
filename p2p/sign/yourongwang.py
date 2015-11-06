@@ -95,10 +95,16 @@ if __name__ == '__main__':
 	reload(sys)
 	sys.setdefaultencoding("gbk")
 
-	username_array = ["zhangchaolts", "wangluyaolts", "zhangxmlts", "caixllts", "13240912500", "13240912700"]
-	password_array = ["csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238", "csujk4236238"]
-	#username_array = ["zhangchaolts", "wangluyaolts", "zhangxmlts"]
-	#password_array = ["csujk4236238", "csujk4236238", "csujk4236238"]
+
+	username_array = []
+	password_array = []
+
+	for line in file("ÓĞÈÚÍøÕËºÅÃÜÂë.txt"):
+		line = line.strip()
+		parts = line.split(" ")
+		if len(parts) == 2:
+			username_array.append(parts[0])
+			password_array.append(parts[1])
 
 	print "\n¡¾" + datetime.datetime.now().strftime("%Y-%m-%d") + "¡¿";
 
