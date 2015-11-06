@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <SmsCodePlatforms>爱码:123,飞Q:234</SmsCodePlatforms>
+  <SmsCodePlatform>爱码</SmsCodePlatform>
+  <SmsCodeUid></SmsCodeUid>
+  <SmsCodePwd></SmsCodePwd>
+  <CaptchaPlatform>UU</CaptchaPlatform>
+  <CaptchaUid></CaptchaUid>
+  <CaptchaPwd></CaptchaPwd>
+  <ProxyPickup></ProxyPickup>
+  <ProxyCheckUrl>http://mobile.welicai.com/activity/togetherMake/r2yUNb</ProxyCheckUrl>
+  <ProxyContains>豪友送你1000本金</ProxyContains>
+  <SiteEncoding>UTF-8</SiteEncoding>
+  <ProxyTimeout>3000</ProxyTimeout>
+  <CheckThreadCount>5</CheckThreadCount>
+  <MobileCaptchaTimeout>120</MobileCaptchaTimeout>
+</Settings>

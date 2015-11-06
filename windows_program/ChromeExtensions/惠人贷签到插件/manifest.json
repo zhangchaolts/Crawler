@@ -1,0 +1,41 @@
+{
+  "name": "huirendai_sign",
+  "manifest_version": 2,
+  "description": "huirendai_sign",
+  "version": "1.0",
+  "permissions": ["<all_urls>", "tabs"],
+  
+  "browser_action": {
+		"default_title": "huirendai_sign",
+		"default_icon": "sign.png",
+		"default_popup": "popup.html"
+	},
+  
+  "content_scripts": [
+   	{
+      "all_frames": true, 
+      "js": ["1_huirendai_to_login_page.js"], 
+      "matches": ["http://www.huirendai.com/", "http://www.huirendai.com/index.php"],
+      "run_at": "document_idle"
+   	},
+  	{
+      "all_frames": true, 
+      "js": ["2_huirendai_login.js"], 
+      "matches": ["http://www.huirendai.com/user/login"],
+      "run_at": "document_idle"
+   	},
+	{
+      "all_frames": true, 
+      "js": ["3_huirendai_sign.js"], 
+      "matches": ["http://www.huirendai.com/index.php?user"],
+      "run_at": "document_idle"
+   	},
+	 {
+      "all_frames": true, 
+      "js": ["4_huirendai_exit.js"], 
+      "matches": ["http://www.huirendai.com/index.php?user&q=user/points"],
+      "run_at": "document_idle"
+   	}
+	]
+     
+}

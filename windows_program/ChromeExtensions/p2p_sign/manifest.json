@@ -1,0 +1,65 @@
+{
+  "name": "p2p_sign",
+  "manifest_version": 2,
+  "description": "p2p_sign",
+  "version": "1.0",
+  "permissions": ["<all_urls>", "tabs"],
+  
+  "browser_action": {
+		"default_title": "p2p_sign",
+		"default_icon": "sign.png",
+		"default_popup": "popup.html"
+	},
+  
+  "content_scripts": [
+    {
+      "all_frames": true, 
+      "js": ["11_yourong_to_login_page.js"], 
+      "matches": ["http://www.yourong.cn/"],
+      "run_at": "document_idle"
+   	},
+  	{
+      "all_frames": true, 
+      "js": ["12_yourong_login.js"], 
+      "matches": ["http://www.yourong.cn/security/login/"],
+      "run_at": "document_idle"
+   	},
+	{
+      "all_frames": true, 
+      "js": ["13_yourong_sign.js"], 
+      "matches": ["http://www.yourong.cn/member/home"],
+      "run_at": "document_idle"
+   	},
+	{
+      "all_frames": true, 
+      "js": ["14_yourong_exit.js"], 
+      "matches": ["http://www.yourong.cn/coupon/reputation"],
+      "run_at": "document_idle"
+   	},
+   	{
+      "all_frames": true, 
+      "js": ["21_huirendai_to_login_page.js"], 
+      "matches": ["http://www.huirendai.com/", "http://www.huirendai.com/index.php"],
+      "run_at": "document_idle"
+   	},
+  	{
+      "all_frames": true, 
+      "js": ["22_huirendai_login.js"], 
+      "matches": ["http://www.huirendai.com/index.php?user&q=action/login"],
+      "run_at": "document_idle"
+   	},
+	{
+      "all_frames": true, 
+      "js": ["23_huirendai_sign.js"], 
+      "matches": ["http://www.huirendai.com/index.php?user"],
+      "run_at": "document_idle"
+   	},
+	 {
+      "all_frames": true, 
+      "js": ["24_huirendai_exit.js"], 
+      "matches": ["http://www.huirendai.com/index.php?user&q=user/points"],
+      "run_at": "document_idle"
+   	}
+	]
+     
+}
