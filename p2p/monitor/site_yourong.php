@@ -1,6 +1,7 @@
 <?php
 
 $FlAG_DEBUG = false;
+#$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
 	echo can_invest_yourong()."\n";
@@ -23,7 +24,7 @@ function can_invest_yourong() { //新站点这里要注意修改
 
 		if( ($line_str = strstr($item_buf, '<strong class="u-pbox-data">')) != false) {
 			//echo $line_str."\n";
-			$s = substr($line_str, 0, strpos($line_str, '/em><span class="f-fs18">天</span>'));
+			$s = substr($line_str, 0, strpos($line_str, 'class="f-fs18">天</span>'));
 			//echo $s."\n";
 			$s = substr($s, strpos($line_str, '<em class="f-ff-amount f-fs38"'));
 			//echo $s."\n";
@@ -34,7 +35,7 @@ function can_invest_yourong() { //新站点这里要注意修改
 			}
 		}
 
-		if($qixian != 0 && $qixian <= 27) {
+		if($qixian != 0 && $qixian <= 28) {
 			return true;
 		}
 

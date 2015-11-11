@@ -1,3 +1,0 @@
-PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18
-PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_period_map.php on line 18
-PHP Warning:  file_get_contents(http://runningyangmao.blog.163.com/blog/static/25166910920157634424666): failed to open stream: HTTP request failed!  in /search/zhangchao/GitHub/Crawler/p2p/monitor/blog_get_site_sitename_map.php on line 18

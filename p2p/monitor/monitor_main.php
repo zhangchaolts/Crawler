@@ -32,7 +32,7 @@ while(true) {
 	}
 
 	foreach($site_sitename_map as $site => $sitename) {
-
+		echo "site:".$site."\n";
 		$timestamp_diff = -1;
 		if(isset($site_last_can_invest_timestamp_map[$site]) == true) {
 			$timestamp_diff = strtotime("now") - $site_last_can_invest_timestamp_map[$site];
