@@ -1,9 +1,9 @@
 <?php
-include('blog_get_site_sitename_map.php');
-include('blog_get_site_period_map.php');
-include('blog_get_mail_list.php');
+include('local_get_site_sitename_map.php');
+include('local_get_site_period_map.php');
+include('local_get_mail_list.php');
 
-$url = "http://runningyangmao.blog.163.com/blog/static/25166910920157634424666";
+$url = "local_info";
 
 $site_sitename_map = get_site_sitename_map($url);
 print_r($site_sitename_map);
@@ -65,9 +65,9 @@ while(true) {
 		}
 
 		echo "\n";
-		sleep(60);
 	}
 
+	sleep(60);
 }
 
 ?>

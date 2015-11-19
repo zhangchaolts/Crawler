@@ -35,7 +35,7 @@ function can_invest_yourong() { //新站点这里要注意修改
 			}
 		}
 
-		if($qixian != 0 && $qixian <= 28) {
+		if($qixian != 0 && $qixian <= 29) {
 			return true;
 		}
 

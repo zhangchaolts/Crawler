@@ -45,7 +45,7 @@ function can_invest_gujinsuo() { //新站点这里要注意修改
 			}
 		}
 
-		if($qixian != 0 && $qixian <= 40 && $jindu > 0 && $jindu < 95) {
+		if($qixian != 0 && $qixian <= 38 && $jindu > 0 && $jindu < 95) {
 			return true;
 		}
 
