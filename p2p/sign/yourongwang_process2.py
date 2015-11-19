@@ -8,7 +8,10 @@ import time,datetime
 import string
 import multiprocessing
 
-def sign(queue, line_ptr, username, password):
+manager = multiprocessing.Manager()
+status_list = manager.list()
+
+def sign(line_ptr, username, password):
 
 	# 获取Cookiejar对象（存在本机的cookie消息）
 	cj = cookielib.CookieJar()
@@ -30,7 +33,7 @@ def sign(queue, line_ptr, username, password):
 		#print xToken
 	else:
 		result = "登录失败：获取token失败！"
-		queue.put(str(line_ptr) + " " + result)
+		status_list.append(str(line_ptr) + " " + result)
 		return
 
 	# Step2:登录
@@ -60,7 +63,7 @@ def sign(queue, line_ptr, username, password):
 	
 	if login_response.find('"success":true') == -1:
 		result = "登录失败！"
-		queue.put(str(line_ptr) + " " + result)
+		status_list.append(str(line_ptr) + " " + result)
 		return
 
 	# Step3:签到
@@ -96,30 +99,28 @@ def sign(queue, line_ptr, username, password):
 	
 	result = result1 + result2
 	print username + " " + result
-	queue.put(str(line_ptr) + " " + result)
+	status_list.append(str(line_ptr) + " " + result)
 	return
 
-
-def get_status_list(queue):
-	status_list = [None] * queue.qsize()
-	while queue.empty() != True:
-		parts = queue.get().split(" ")
+def change_list(status_list):
+	my_status_list = [None] * len(status_list)
+	for status in status_list:
+		parts = status.split(" ")
 		if len(parts) == 2:
 			ptr = string.atoi(parts[0])
-			status_list[ptr] = parts[1]
-	return status_list
+			my_status_list[ptr] = parts[1]
+	return my_status_list
 
 
 def sign_all(account_list):
-	queue = multiprocessing.Queue()
 	jobs = []
 	for i in xrange(len(account_list)):
-		job = multiprocessing.Process(target=sign, args=(queue, i, account_list[i][0], account_list[i][1]))
+		job = multiprocessing.Process(target=sign, args=(i, account_list[i][0], account_list[i][1]))
 		jobs.append(job)
 		job.start()
 	for job in jobs:
 		job.join()
-	return get_status_list(queue)
+	return change_list(status_list)
 
 
 if __name__ == '__main__':
@@ -136,8 +137,8 @@ if __name__ == '__main__':
 		if len(parts) == 2:
 			account_list.append([parts[0], parts[1]])
 
-	status_list = sign_all(account_list)
+	my_status_list = sign_all(account_list)
 
-	for status in status_list:
+	for status in my_status_list:
 		print status.encode('gbk')
 
