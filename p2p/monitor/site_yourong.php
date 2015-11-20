@@ -20,6 +20,11 @@ function can_invest_yourong() { //新站点这里要注意修改
 		$item_buf = substr($buf, 0, strpos($buf, '<div class="u-pbox-footer">')); //项目结尾标记
 		//echo $item_buf."\n";
 
+		if(strstr($item_buf, 'u-newCustomer-tag') != false) {
+			$buf = strstr($buf, '<div class="u-pbox-footer">');
+			continue;
+		}
+
 		$qixian = 0;
 
 		if( ($line_str = strstr($item_buf, '<strong class="u-pbox-data">')) != false) {
