@@ -52,7 +52,7 @@ while(true) {
 			if($is_can_invest == true) {
 				$mail_list = get_mail_list($url, $sitename);
 				print_r($mail_list);
-				//$mail_list = array("43228637@qq.com");
+				#$mail_list = array("43228637@qq.com");
 
 				$mail_title = "[¼à¿Ø]".$sitename."ÓĞ±êÀ²~";
 				$mail_body = "";
