@@ -95,7 +95,6 @@ if __name__ == '__main__':
 	reload(sys)
 	sys.setdefaultencoding("gbk")
 
-
 	username_array = []
 	password_array = []
 
@@ -106,7 +105,7 @@ if __name__ == '__main__':
 			username_array.append(parts[0])
 			password_array.append(parts[1])
 
-	print "\n¡¾" + datetime.datetime.now().strftime("%Y-%m-%d") + "¡¿";
+	print "\n¡¾" + datetime.datetime.now().strftime("%Y-%m-%d") + "¡¿"
 
 	for i in range(len(username_array)):
 		result = sign(username_array[i], password_array[i])
