@@ -11,20 +11,20 @@ if($FlAG_DEBUG == true) {
 
 function can_invest_yourong() { //新站点这里要注意修改
 
-	$buf = file_get_contents("http://www.yourong.cn/products/list-all-investing-1.html");
+	$buf = file_get_contents("https://www.yrw.com/products/list-all-investing-1.html");
 	$buf = mb_convert_encoding($buf, "gbk", "utf-8");
-	//echo $buf;
+	#echo $buf;
 
 	while( ($buf = strstr($buf, '<div class="m-pbox-wrap">')) != false ) { //项目开头标记
 
 		$item_buf = substr($buf, 0, strpos($buf, '<div class="u-pbox-footer">')); //项目结尾标记
-		//echo $item_buf."\n";
+		#echo $item_buf."\n";
 
-		if(strstr($item_buf, 'u-newCustomer-tag') != false) {
+		if(strstr($item_buf, 'u-newCustomer-tag') != false || strstr($item_buf, '车商融') != false) {
 			$buf = strstr($buf, '<div class="u-pbox-footer">');
 			continue;
 		}
-
+		
 		$qixian = 0;
 
 		if( ($line_str = strstr($item_buf, '<strong class="u-pbox-data">')) != false) {

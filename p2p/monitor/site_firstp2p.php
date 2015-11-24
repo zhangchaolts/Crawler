@@ -62,7 +62,7 @@ function can_invest_firstp2p() { //新站点这里要注意修改
 		echo "is_100:";
 		echo var_dump($is_100);
 
-		if($is_100 == true && $qixian != "" && (startsWith($qixian, "7~") == true || $qixian == "10" || $qixian == "15" /*|| $qixian == "20" || $qixian == "30"*/) && $left_money != '0.00') {
+		if($is_100 == true && $qixian != "" && (startsWith($qixian, "7~") == true || $qixian == "10" /*|| $qixian == "15" || $qixian == "20" || $qixian == "30"*/) && $left_money != '0.00') {
 			//return true;
 			$is_find = true;
 		}

@@ -20,8 +20,11 @@ while(true) {
 	$now_time = date("Y-m-d H:i:s");
 	echo $now_time."\n\n";
 
+	$hour = "";
+
 	$parts1 = explode(":", $now_time);
 	if(count($parts1) == 3) {
+		$hour = $parts1[0];
 		$minute = $parts1[1];
 		//echo $minute."\n";
 		if($minute <= 3) {
@@ -33,6 +36,11 @@ while(true) {
 
 	foreach($site_sitename_map as $site => $sitename) {
 		echo "site:".$site."\n";
+
+		if($site == "firstp2p" && $hour != "" && $hour < 10) {
+			continue;
+		}
+
 		$timestamp_diff = -1;
 		if(isset($site_last_can_invest_timestamp_map[$site]) == true) {
 			$timestamp_diff = strtotime("now") - $site_last_can_invest_timestamp_map[$site];

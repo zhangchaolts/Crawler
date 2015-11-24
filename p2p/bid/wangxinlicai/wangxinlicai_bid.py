@@ -44,7 +44,7 @@ def judge_already_bid(html):
 		buf = buf[item_end_pos + len('</em></td>'):]
 	return is_already_bid
 
-def get_invest_id(html):
+def get_invest_days_id(html):
 	id_7 = ''
 	id_10 = ''
 	id_15 = ''
@@ -84,26 +84,30 @@ def get_invest_id(html):
 
 		id = get_content_from_html('href="/deal/(.*?)"target=', item_html)
 		if id != '':
-			if qixian.find('7~') != 0:
+			if qixian.find('7~') != -1:
 				id_7 = id
-			if qixian != '10':
+			if qixian == '10':
 				id_10 = id	
-			if qixian != '15':
+			if qixian == '15':
 				id_15 = id
+			if qixian == '30':
+				id_30 = id
 
 		buf = buf[item_end_pos + len('<divclass="product_btn">'):]
 
 	if id_7 != '':
-		return id_7
+		return (7, id_7)
 	elif id_10 != '':
-		return id_10
+		return (10, id_10)
 	elif id_15 != '':
-		return id_15
+		return (15, id_15)
+	elif id_15 != '':
+		return (30, id_30)
 
-	return ''
+	return (0, '')
 		
 
-def sign(username, password):
+def bid(username, password, bid_days):
 
 	# 获取Cookiejar对象（存在本机的cookie消息）
 	cj = cookielib.CookieJar()
@@ -149,7 +153,6 @@ def sign(username, password):
 	login_response_1 = opener.open(login_request_1).read().decode('unicode_escape').encode('gb18030')
 	#print login_response_1
 
-
 	login_url_2 = "https://www.firstp2p.com/user/doLogin"
 
 	login_data_2 = {	'valid_phone' : '', \
@@ -191,24 +194,7 @@ def sign(username, password):
 	if home_html.find('退出') == -1:
 		result = "登录失败！"
 		print result
-		return
-
-	# 检查红包
-	hongbao = get_content_from_html("红包金额：</th><td>(.*?)&nbsp元", home_html)
-	print 'hongbao:' + hongbao
-
-	if string.atof(hongbao) < 1.50:
-		result = "账号红包小于1.5元！"
-		print result
-		#return
-
-	# 检查可用余额
-	money = get_content_from_html('可用余额：</th><td><emclass="color-yellow1">(.*?)&nbsp</em>元', home_html)
-	print 'money:' + money
-	if string.atof(money) < 100.0:
-		result = "可用余额小于100.0元！"
-		print result
-		return
+		return result
 
 	# 检查今天是否已经投过标
 	recode_url = 'http://www.firstp2p.com/account/money?p=1'
@@ -220,20 +206,37 @@ def sign(username, password):
 	if is_already_bid == 'yes':
 		result = "今天已经投过标了！"
 		print result
-		return
+		return result
 
-	# 获取可投标id
+	# 检查红包
+	hongbao = get_content_from_html("红包金额：</th><td>(.*?)&nbsp元", home_html)
+	print 'hongbao:' + hongbao
+	if string.atof(hongbao) < 1.50:
+		result = "账户红包小于1.5元！"
+		print result
+		return result
+
+	# 检查可用余额
+	money = get_content_from_html('可用余额：</th><td><emclass="color-yellow1">(.*?)&nbsp</em>元', home_html)
+	print 'money:' + money
+	if string.atof(money) < 100.0:
+		result = "可用余额小于100.0元！"
+		print result
+		return result
+
+	# 获取可投标天数和id
 	invest_url = "http://www.firstp2p.com/deals?p=1&cate=0"
 	invest_request = urllib2.Request(invest_url)
 	invest_html = opener.open(invest_request).read().decode('utf8').encode('gb18030')
 	invest_html = remove_all_blank(invest_html)
 	#print invest_html
-	invest_id = get_invest_id(invest_html)
+	(invest_days, invest_id) = get_invest_days_id(invest_html)
+	print 'invest_days:' + str(invest_days)
 	print 'invest_id:' + invest_id
-	if invest_id == '':
+	if invest_days == 0 or invest_id == '' or (invest_days != 0 and invest_days > bid_days):
 		result = "无可投标的！"
 		print result
-		return
+		return result
 
 	bid_url_1 = "http://www.firstp2p.com/deal/bid/" + invest_id;
 	bid_request_1 = urllib2.Request(bid_url_1)
@@ -247,12 +250,15 @@ def sign(username, password):
 	#print 'token_id:' + token_id  
 	#print 'coupon_id:' + coupon_id
 
-	bid_url_2 = "http://www.firstp2p.com/deal/dobid?id=" + invest_id + "&token_id=" + token_id + "&token=" + token + "&bid_money=100.00&coupon_id=" + coupon_id +"&coupon_is_fixed=1"
+	bid_url_2 = "http://www.firstp2p.com/deal/dobid?id=" + invest_id + "&token_id=" + token_id + "&token=" + token + "&bid_money=10000.00&coupon_id=" + coupon_id +"&coupon_is_fixed=1"
 	print bid_url_2
 
-	#bid_request_2 = urllib2.Request(bid_url_2)
-	#bid_response_2 = opener.open(bid_request_2).read().decode('unicode_escape').encode('gb18030')
-	#print bid_response_2
+	bid_request_2 = urllib2.Request(bid_url_2)
+	bid_response_2 = opener.open(bid_request_2).read().decode('unicode_escape').encode('gb18030')
+	print bid_response_2
+	bid_result = get_content_from_html('"info":"(.*?)"', bid_response_2)
+	print bid_result
+	return bid_result
 
 
 if __name__ == '__main__':
@@ -267,4 +273,5 @@ if __name__ == '__main__':
 		line = line.strip()
 		parts = line.split(" ")
 		if len(parts) == 2:
-			sign(parts[0], parts[1])
+			result = bid(parts[0], parts[1], 7)
+			print parts[0] + " : " + result
