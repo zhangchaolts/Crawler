@@ -27,6 +27,22 @@ def remove_all_blank(html):
 	html = html.replace(' ', '')
 	return html
 
+def get_shuhui_id_list(html):
+	shuhui_id_list = []
+	buf = html
+	while buf.find('<atitle="') != -1:
+		item_st_pos = buf.find('<atitle="')
+		item_end_pos = buf.find('<p>申请赎回后生成回款计划</p>')
+		if item_st_pos == -1 or item_end_pos == -1:
+			break
+		item_html = buf[item_st_pos:item_end_pos]
+		#print item_html + "\n\n"
+		shuhui_id = get_content_from_html('<ahref="javascript:void\(0\)"data-id="(.*?)"class="j_shuhui">', item_html)
+		if shuhui_id != '':
+			shuhui_id_list.append(shuhui_id)
+		buf = buf[item_end_pos + len('<p>申请赎回后生成回款计划</p>'):]
+	return shuhui_id_list
+
 def judge_already_bid(html):
 	is_already_bid = 'no'
 	buf = html
@@ -107,7 +123,7 @@ def get_invest_days_id(html):
 	return (0, '')
 		
 
-def bid(username, password, bid_days):
+def bid(username, password, bid_days, is_shuhui):
 
 	# 获取Cookiejar对象（存在本机的cookie消息）
 	cj = cookielib.CookieJar()
@@ -120,7 +136,13 @@ def bid(username, password, bid_days):
 
 	# 登录
 	login_url_0 = 'https://www.firstp2p.com/user/login'
-	login_html_0 = urllib2.urlopen(login_url_0).read()
+	login_html_0 = ''
+	try:
+		login_html_0 = urllib2.urlopen(login_url_0, timeout=30).read()
+	except urllib2.URLError, e:
+		result = "登录请求超时，登录失败！"
+		print result
+		return result
 
 	token = get_content_from_html("name='token' value='(.*?)'", login_html_0)
 	token_id = get_content_from_html("name='token_id' value='(.*?)'", login_html_0)
@@ -150,7 +172,13 @@ def bid(username, password, bid_days):
 					}
 
 	login_request_1 = urllib2.Request(login_url_1, login_post_data_1, login_headers_1)
-	login_response_1 = opener.open(login_request_1).read().decode('unicode_escape').encode('gb18030')
+	login_response_1 = ''
+	try:
+		login_response_1 = opener.open(login_request_1, timeout=30).read().decode('unicode_escape').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "登录请求超时，登录失败！"
+		print result
+		return result
 	#print login_response_1
 
 	login_url_2 = "https://www.firstp2p.com/user/doLogin"
@@ -187,7 +215,13 @@ def bid(username, password, bid_days):
 
 	home_url = "http://www.firstp2p.com/account"
 	home_request = urllib2.Request(home_url)
-	home_html = opener.open(home_request).read().decode('utf8').encode('gb18030')
+	home_html = ''
+	try:
+		home_html = opener.open(home_request, timeout=30).read().decode('utf8').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "登录请求超时，登录失败！"
+		print result
+		return result
 	home_html = remove_all_blank(home_html)
 	#print home_html
 
@@ -196,17 +230,84 @@ def bid(username, password, bid_days):
 		print result
 		return result
 
+	if is_shuhui == 'yes':
+		shuhui_url_1 = 'http://www.firstp2p.com/account/load?type=1'
+		shuhui_request_1 = urllib2.Request(shuhui_url_1)
+		shuhui_html_1 = ''
+		try:
+			shuhui_html_1 = opener.open(shuhui_request_1, timeout=30).read().decode('utf8').encode('gb18030')
+		except urllib2.URLError, e:
+			result = "赎回请求超时，赎回失败！"
+			print result
+			return result
+
+		shuhui_html_1 = remove_all_blank(shuhui_html_1)
+		shuhui_id_list = get_shuhui_id_list(shuhui_html_1)
+		print shuhui_id_list
+		if len(shuhui_id_list) == 0:
+			result = "无可赎回的标！"
+			print result
+			return result
+
+		is_all_shuhui = True
+
+		for shuhui_id in shuhui_id_list:
+			print shuhui_id
+			shuhui_url_2 = 'http://www.firstp2p.com/account/redeem'
+			shuhui_data_2 = {"id" : shuhui_id}
+			shuhui_post_data_1 = urllib.urlencode(shuhui_data_2)
+			shuhui_headers_2 = {	"Accept" : "*/*", \
+									#"Accept-Encoding" : "gzip, deflate", \
+									"Accept-Language" : "zh-CN,zh;q=0.8", \
+									"Connection" : "keep-alive", \
+									"Content-Length" : "11", \
+									"Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8", \
+									"Host" : "www.firstp2p.com", \
+									"Origin" : "https://www.firstp2p.com", \
+									"Referer" : "http://www.firstp2p.com/account/load?type=1", \
+									"User-Agent" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.69 Safari/537.36", \
+									"X-Requested-With" : "XMLHttpRequest" \
+								}
+			shuhui_request_2 = urllib2.Request(shuhui_url_2, shuhui_post_data_1, shuhui_headers_2)
+			shuhui_response_2 = ''
+			try:
+				shuhui_response_2 = opener.open(shuhui_request_2, timeout=30).read().decode('unicode_escape').encode('gb18030')
+			except urllib2.URLError, e:
+				result = "赎回请求超时，赎回失败！"
+				print result
+				return result
+			shuhui_result = get_content_from_html('"info":"(.*?)"', shuhui_response_2)
+			print shuhui_result
+			if shuhui_result != '赎回成功！':
+				is_all_shuhui = False
+
+		if is_all_shuhui == True:
+			result = '全部赎回成功！'
+			print result
+			return result
+
+		result = '赎回失败！'
+		print result
+		return result
+
 	# 检查今天是否已经投过标
 	recode_url = 'http://www.firstp2p.com/account/money?p=1'
 	recode_request = urllib2.Request(recode_url)
-	recode_html = opener.open(recode_request).read().decode('utf8').encode('gb18030')
+	recode_html = ''
+	try:
+		recode_html = opener.open(recode_request, timeout=30).read().decode('utf8').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "投标请求超时，投标失败！"
+		print result
+		return result
+
 	recode_html = remove_all_blank(recode_html)
 	is_already_bid = judge_already_bid(recode_html)
 	print 'is_already_bid:' + is_already_bid
 	if is_already_bid == 'yes':
 		result = "今天已经投过标了！"
 		print result
-		return result
+		#return result	#debug
 
 	# 检查红包
 	hongbao = get_content_from_html("红包金额：</th><td>(.*?)&nbsp元", home_html)
@@ -214,7 +315,7 @@ def bid(username, password, bid_days):
 	if string.atof(hongbao) < 1.50:
 		result = "账户红包小于1.5元！"
 		print result
-		return result
+		#return result	#debug
 
 	# 检查可用余额
 	money = get_content_from_html('可用余额：</th><td><emclass="color-yellow1">(.*?)&nbsp</em>元', home_html)
@@ -222,25 +323,38 @@ def bid(username, password, bid_days):
 	if string.atof(money) < 100.0:
 		result = "可用余额小于100.0元！"
 		print result
-		return result
+		return result	#debug
 
 	# 获取可投标天数和id
 	invest_url = "http://www.firstp2p.com/deals?p=1&cate=0"
 	invest_request = urllib2.Request(invest_url)
-	invest_html = opener.open(invest_request).read().decode('utf8').encode('gb18030')
+	invest_html = ''
+	try:
+		invest_html = opener.open(invest_request, timeout=30).read().decode('utf8').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "投标请求超时，投标失败！"
+		print result
+		return result
 	invest_html = remove_all_blank(invest_html)
+
 	#print invest_html
 	(invest_days, invest_id) = get_invest_days_id(invest_html)
 	print 'invest_days:' + str(invest_days)
 	print 'invest_id:' + invest_id
 	if invest_days == 0 or invest_id == '' or (invest_days != 0 and invest_days > bid_days):
-		result = "无可投标的！"
+		result = "无" + str(bid_days) + "天以内可投标！"
 		print result
-		return result
+		#return result	#debug
 
 	bid_url_1 = "http://www.firstp2p.com/deal/bid/" + invest_id;
 	bid_request_1 = urllib2.Request(bid_url_1)
-	bid_html_1 = opener.open(bid_request_1).read().decode('utf8').encode('gb18030')
+	bid_html_1 = ''
+	try:
+		bid_html_1 = opener.open(bid_request_1, timeout=30).read().decode('utf8').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "投标请求超时，投标失败！"
+		print result
+		return result
 
 	token = get_content_from_html("name='token' value='(.*?)'", bid_html_1)
 	token_id = get_content_from_html("name='token_id' value='(.*?)'", bid_html_1)
@@ -254,7 +368,13 @@ def bid(username, password, bid_days):
 	print bid_url_2
 
 	bid_request_2 = urllib2.Request(bid_url_2)
-	bid_response_2 = opener.open(bid_request_2).read().decode('unicode_escape').encode('gb18030')
+	bid_response_2 = ''
+	try:
+		bid_response_2 = opener.open(bid_request_2, timeout=30).read().decode('unicode_escape').encode('gb18030')
+	except urllib2.URLError, e:
+		result = "投标请求超时，投标失败！"
+		print result
+		return result
 	print bid_response_2
 	bid_result = get_content_from_html('"info":"(.*?)"', bid_response_2)
 	print bid_result
@@ -273,5 +393,5 @@ if __name__ == '__main__':
 		line = line.strip()
 		parts = line.split(" ")
 		if len(parts) == 2:
-			result = bid(parts[0], parts[1], 7)
+			result = bid(parts[0], parts[1], 7, 'yes')
 			print parts[0] + " : " + result

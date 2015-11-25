@@ -26,7 +26,7 @@ function get_site_sitename_map($url) {
 		foreach($parts2 as $index2 => $site_sitename) {
 			$parts3 = explode(":", $site_sitename);
 			if(count($parts3) == 2) {
-				$site_sitename_map[$parts3[0]] = $parts3[1];
+				$site_sitename_map[$parts3[0]] = trim($parts3[1]);
 			}
 		}   
 	}

@@ -50,7 +50,7 @@ function can_invest_yourong_notice() { //新站点这里要注意修改
 			echo "publish_time:".$publish_time."\n";
 		}
 
-		if(strstr($item_buf, '车商融') != false && $qixian != 0 && $qixian <= 34) {
+		if(strstr($title, '车商融') == false && $qixian != 0 && $qixian <= 34) {
 			return true;
 		}
 
