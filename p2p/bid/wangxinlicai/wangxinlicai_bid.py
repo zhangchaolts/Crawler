@@ -6,6 +6,7 @@ import cookielib
 import re
 import time,datetime
 import string
+import socket
 
 class RedirectHandler(urllib2.HTTPRedirectHandler):
 	def http_error_301(self, req, fp, code, msg, headers):
@@ -124,6 +125,8 @@ def get_invest_days_id(html):
 		
 
 def bid(username, password, bid_days, is_shuhui):
+
+	socket.setdefaulttimeout(30.0)
 
 	# 获取Cookiejar对象（存在本机的cookie消息）
 	cj = cookielib.CookieJar()
