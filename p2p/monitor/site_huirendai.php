@@ -1,7 +1,7 @@
 <?php
 
 $FlAG_DEBUG = false;
-#$FlAG_DEBUG = true;
+$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
     echo can_invest_huirendai()."\n";
