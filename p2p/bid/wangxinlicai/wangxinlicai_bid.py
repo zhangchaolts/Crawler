@@ -321,6 +321,7 @@ def bid(username, password, bid_days, is_shuhui):
 
 	# 检查可用余额
 	money = get_content_from_html('可用余额：</th><td><emclass="color-yellow1">(.*?)&nbsp</em>元', home_html)
+	money = money.replace(',', '')
 	print 'money:' + money
 	if string.atof(money) < 100.0:
 		result = "可用余额小于100.0元！"
