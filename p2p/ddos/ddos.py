@@ -6,7 +6,7 @@ import threading
 #---------------------------
 MAX_CONN=20000
 PORT=80
-HOST="www.oalicai.com"
+HOST="www.eloancn.com"
 PAGE="/"
 #---------------------------
 

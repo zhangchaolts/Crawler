@@ -56,7 +56,7 @@ function can_invest_9888() { //新站点这里要注意修改
 
 		echo $borrowAmount."; ".$completeLoan."; ".$repayPeriod."; ".$repayMode."; ".$annualRate."\n";
 
-		if($borrowAmount > $completeLoan && $repayPeriod <= 26 && $repayMode == 5 && $annualRate <= 9.0) {
+		if($borrowAmount > $completeLoan && $repayPeriod <= 25 && $repayMode == 5 && $annualRate <= 9.0) {
 			return true;
 		}
 		

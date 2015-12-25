@@ -65,7 +65,7 @@ while(true) {
 				$mail_title = "[¼à¿Ø]".$sitename."ÓÐ±êÀ²~";
 				$mail_body = "";
 				foreach($mail_list as $index1 => $mail_box) {
-					system('echo '.$mail_body.' | mail -s "'.$mail_title.'" '."$mail_box");
+					system('echo '.$mail_body.' | mail -s "'.$mail_title.'" '."$mail_box".' -- -f zhangchao@sogou-inc.com');
 				}
 
 				$site_last_can_invest_timestamp_map[$site] = strtotime("now");
