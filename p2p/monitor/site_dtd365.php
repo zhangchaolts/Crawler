@@ -24,6 +24,10 @@ function can_invest_dtd365() { //新站点这里要注意修改
 		$item_buf = str_replace("\r", "", $item_buf);
 		//echo $item_buf."\n\n\n\n";
 
+		if(strstr($item_buf, '专属标') != false) {
+			continue;
+		}
+
 		$qixian_month = "";
 		$qixian_day = "";
 
@@ -50,7 +54,7 @@ function can_invest_dtd365() { //新站点这里要注意修改
 			}
 		}
 
-		if( ( ($qixian_month != "" && $qixian_month <= 2) || ($qixian_day != "" && $qixian_day <= 60) ) && ($jindu > 0 && $jindu < 95) ) {
+		if( ( ($qixian_month != "" && $qixian_month >= 2) || ($qixian_day != "" && $qixian_day >= 60) ) && ($jindu > 0 && $jindu < 95) ) {
 			return true;
 		}
 

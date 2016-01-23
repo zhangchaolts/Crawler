@@ -1,9 +1,9 @@
 <?php
 
-$FlAG_DEBUG = false;
+$FlAG_DEBUG = true;
 
 if($FlAG_DEBUG == true) {
-	$mail_list = array("43228637@qq.com");
+	$mail_list = array("82213802@qq.com");
 	$sitename = "ÒËÈË´û";
 	send_mail($mail_list, $sitename);
 }
