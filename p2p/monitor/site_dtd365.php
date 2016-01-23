@@ -25,6 +25,7 @@ function can_invest_dtd365() { //新站点这里要注意修改
 		//echo $item_buf."\n\n\n\n";
 
 		if(strstr($item_buf, '专属标') != false) {
+			$buf = strstr($buf, 'btn_bottow_cando'); //项目结尾标记
 			continue;
 		}
 
